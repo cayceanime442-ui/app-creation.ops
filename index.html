@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="auth-screen" id="authScreen">
+      <div class="auth-panel">
+        <div class="auth-visual">
+          <div class="auth-visual-bubble"></div>
+          <div class="auth-visual-card">
+            <div class="auth-mini-avatar"></div>
+            <div>
+              <p>Live now</p>
+              <h3>Connect with creators</h3>
+            </div>
+          </div>
+        </div>
+        <div class="auth-card">
+          <div class="brand auth-brand">
+            <div class="brand-icon">F</div>
+            <span>Flex</span>
+          </div>
+          <div class="auth-header">
+            <p class="eyebrow">Welcome to Flex</p>
+            <h2>Sign in to continue</h2>
+            <span class="auth-subtitle">Create an account or use your existing one to join the community.</span>
+          </div>
+          <div class="auth-toggle">
+            <button class="auth-tab active" data-mode="login">Sign in</button>
+            <button class="auth-tab" data-mode="signup">Create account</button>
+          </div>
+          <form id="loginForm" class="auth-form active">
+            <label class="auth-label" for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" required />
+            <div class="auth-password-row">
+              <label class="auth-label" for="loginPassword">Password</label>
+              <button type="button" class="auth-password-toggle" data-target="loginPassword">Show</button>
+            </div>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required />
+            <a class="auth-link" href="#">Forgot password?</a>
+            <button type="submit" class="publish-btn">Sign in</button>
+          </form>
+          <form id="signupForm" class="auth-form">
+            <label class="auth-label" for="signupName">Full name</label>
+            <input type="text" id="signupName" placeholder="Your full name" required />
+            <label class="auth-label" for="signupUsername">Username</label>
+            <input type="text" id="signupUsername" placeholder="Choose a username" required />
+            <label class="auth-label" for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" placeholder="Your email" required />
+            <div class="auth-password-row">
+              <label class="auth-label" for="signupPassword">Password</label>
+              <button type="button" class="auth-password-toggle" data-target="signupPassword">Show</button>
+            </div>
+            <input type="password" id="signupPassword" placeholder="Create a password" required />
+            <button type="submit" class="publish-btn">Create account</button>
+          </form>
+          <p class="auth-message" id="authMessage"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="app-shell hidden" id="appShell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-icon">F</div>
+          <span>Flex</span>
+        </div>
+        <nav>
+          <a class="nav-item active" href="#">🏠 <span>Home</span></a>
+          <a class="nav-item" href="#">🔎 <span>Explore</span></a>
+          <a class="nav-item" href="#">🔔 <span>Notifications</span></a>
+          <a class="nav-item" href="#">💬 <span>Messages</span></a>
+          <a class="nav-item" href="#">📷 <span>Photos</span></a>
+          <a class="nav-item" href="#">⚙️ <span>Settings</span></a>
+        </nav>
+        <button class="compose-btn">+ Create Post</button>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h1 id="welcomeMessage">Welcome back</h1>
+          </div>
+          <div class="topbar-actions">
+            <button>✉️</button>
+            <button>🔔</button>
+            <div class="avatar-menu-wrap">
+              <button id="topAvatar" class="top-avatar-btn" aria-label="Profile" aria-expanded="false"></button>
+              <div id="profileMenu" class="profile-menu hidden">
+                <button id="editProfileBtn" class="profile-menu-btn" type="button">Edit profile</button>
+                <button id="logoutBtn" class="profile-menu-btn" type="button">Sign out</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="stories-panel">
+          <div class="story active">
+            <div class="story-avatar">+</div>
+            <span>Your Story</span>
+          </div>
+        </section>
+
+        <section class="composer">
+          <button id="composerAvatar" class="composer-avatar-btn" aria-label="Your profile"></button>
+          <div>
+            <textarea id="postText" placeholder="What's happening today?"></textarea>
+            <div class="composer-actions">
+              <div>
+                <button>📷 Photo</button>
+                <button>📍 Location</button>
+                <button>😊 Mood</button>
+              </div>
+              <button id="publishBtn" class="publish-btn">Post</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="feed" class="feed"></section>
+      </main>
+
+      <aside class="right-panel">
+        <section class="profile-card">
+          <div class="profile-cover"></div>
+          <div id="profileAvatar" class="profile-avatar avatar-placeholder"></div>
+          <h2 id="profileName">Crimson</h2>
+          <p id="profileHandle">@crimson</p>
+          <div class="profile-stats">
+            <div><strong id="followersCount">0</strong><span>Followers</span></div>
+            <div><strong id="followingCount">0</strong><span>Following</span></div>
+            <div><strong id="postsCount">0</strong><span>Posts</span></div>
+          </div>
+        </section>
+
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
